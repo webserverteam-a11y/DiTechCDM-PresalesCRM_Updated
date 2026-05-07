@@ -7,19 +7,11 @@ import { Firm, FirmContact } from '../types';
 const BLANK_FIRM: Partial<Firm> = { name:'',ch_number:'',city:'',region:'',size:'',staff_count:'',contact_name:'',contact_title:'',phone:'',email:'',main_phone:'',contact_li:'',website:'',linkedin:'',category:'',source:'',stage:'Lead',pricing_model:'',service_interest:'',assigned_to:'',last_contact:'',follow_up:'',notes:'',win_amount:0 };
 
 const CATEGORY_OPTIONS = [
-  'STM Publishing',
-  'Academic & Scholarly Publishing',
-  'Journals Publishing',
-  'K-12',
-  'Higher Education Publishing',
-  'Trade Books Publishing',
-  "Children's Publishing",
-  'Digital Elearning Publishing',
-  'Magazine Publishing',
-  'Corporate Publishing',
-  'Government NGO Publishing',
-  'Religious Publishing',
-  'Comics Graphic Novels Publishing',
+  'SEO',
+  'Social Media', 
+  'Ads',
+  'Website',
+  'Others',
 ];
 
 export default function FirmsDB({ onLogCall }: { onLogCall?: (firmId: string) => void }) {
