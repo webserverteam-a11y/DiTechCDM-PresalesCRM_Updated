@@ -13,7 +13,7 @@ const CATEGORY_OPTIONS = [
   'Website',
   'Others',
 ];
-
+ 
 export default function FirmsDB({ onLogCall }: { onLogCall?: (firmId: string) => void }) {
   const { firms, setFirms, calls, currentUser, admin, showToast, hasPerm, scopeFirms } = useAppContext();
   const [search, setSearch] = useState('');
@@ -604,10 +604,7 @@ export default function FirmsDB({ onLogCall }: { onLogCall?: (firmId: string) =>
                     </select>
                   </div>
                   <div className="fg"><label>Category</label>
-                    <select value={form.category||''} onChange={e=>setForm(f=>({...f,category:e.target.value}))}>
-                      <option value="">Select</option>
-                      {CATEGORY_OPTIONS.map(c=><option key={c}>{c}</option>)}
-                    </select>
+                    <input type="text" placeholder="e.g. Digital Marketing" value={form.category||''} onChange={e=>setForm(f=>({...f,category:e.target.value}))} />
                   </div>
                   <div className="fg"><label>Source</label>
                     <select value={form.source||''} onChange={e=>setForm(f=>({...f,source:e.target.value}))}>
@@ -620,7 +617,10 @@ export default function FirmsDB({ onLogCall }: { onLogCall?: (firmId: string) =>
                     </select>
                   </div>
                   <div className="fg"><label>Service interest</label>
-                    <input type="text" placeholder="e.g. Payroll" value={form.service_interest||''} onChange={e=>setForm(f=>({...f,service_interest:e.target.value}))} />
+                    <select value={form.service_interest||''} onChange={e=>setForm(f=>({...f,service_interest:e.target.value}))}>
+                      <option value="">Select</option>
+                      {CATEGORY_OPTIONS.map(c=><option key={c}>{c}</option>)}
+                    </select>
                   </div>
                   <div className="fs-title">Dates & revenue</div>
                   <div className="fg"><label>Win amount (£)</label><input type="number" value={form.win_amount||''} onChange={e=>setForm(f=>({...f,win_amount:parseFloat(e.target.value)||0}))} /></div>
